@@ -1,14 +1,14 @@
 <theme name="mootral">
   <source size="24" gridsize="32" margin="0" spacing="1">
-    <image file="cursors.xcf-layers/Hotspots.png" use="hotspot"/>
-    <image file="cursors.xcf-layers/Frame0.png" use="0"/>
-    <image file="cursors.xcf-layers/Frame1.png" use="1"/>
-    <image file="cursors.xcf-layers/Frame2.png" use="2"/>
-    <image file="cursors.xcf-layers/Frame3.png" use="3"/>
-    <image file="cursors.xcf-layers/Frame4.png" use="4"/>
-    <image file="cursors.xcf-layers/Frame5.png" use="5"/>
-    <image file="cursors.xcf-layers/Frame6.png" use="6"/>
-    <image file="cursors.xcf-layers/Frame7.png" use="7"/>
+    <image file="build/frames/Hotspots.png" use="hotspot"/>
+    <image file="build/frames/Frame0.png" use="0"/>
+    <image file="build/frames/Frame1.png" use="1"/>
+    <image file="build/frames/Frame2.png" use="2"/>
+    <image file="build/frames/Frame3.png" use="3"/>
+    <image file="build/frames/Frame4.png" use="4"/>
+    <image file="build/frames/Frame5.png" use="5"/>
+    <image file="build/frames/Frame6.png" use="6"/>
+    <image file="build/frames/Frame7.png" use="7"/>
   </source>
   <layout>
     <row>
@@ -22,7 +22,7 @@
       <cursor name="help" />
     </row>
     <row>
-      <cursor name="move" />
+      <cursor name="grab" />
       <cursor name="ne-resize" />
       <cursor name="nesw-resize" />
       <cursor name="no-drop" />
@@ -66,6 +66,17 @@
       <cursor name="zoom-in" />
       <cursor name="zoom-out" />
       <cursor name="all-scroll" />
+      <cursor name="dnd-ask" />
+      <cursor name="dnd-copy" />
+    </row>
+    <row>
+      <cursor name="dnd-link" />
+      <cursor name="dnd-move" />
+      <cursor name="dnd-none" />
+      <cursor name="pencil" />
+      <cursor name="grabbing" />
+      <cursor name="move" />
+      <cursor name="context-menu" />
     </row>
   </layout>
 
@@ -78,9 +89,6 @@
   <alias target="cell"         name="diamond_cross"     />
 
   <!-- missing -->
-  <alias target="default"      name="context-menu"    />
   <alias target="ew-resize"    name="col-resize"      />
   <alias target="ns-resize"    name="row-resize"      />
-  <alias target="move"         name="grab"            />
-  <alias target="move"         name="grabbing"            />
 </theme>
