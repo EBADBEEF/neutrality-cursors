@@ -1,0 +1,86 @@
+<theme name="mootral">
+  <source size="24" gridsize="32" margin="0" spacing="1">
+    <image file="cursors.xcf-layers/Hotspots.png" use="hotspot"/>
+    <image file="cursors.xcf-layers/Frame0.png" use="0"/>
+    <image file="cursors.xcf-layers/Frame1.png" use="1"/>
+    <image file="cursors.xcf-layers/Frame2.png" use="2"/>
+    <image file="cursors.xcf-layers/Frame3.png" use="3"/>
+    <image file="cursors.xcf-layers/Frame4.png" use="4"/>
+    <image file="cursors.xcf-layers/Frame5.png" use="5"/>
+    <image file="cursors.xcf-layers/Frame6.png" use="6"/>
+    <image file="cursors.xcf-layers/Frame7.png" use="7"/>
+  </source>
+  <layout>
+    <row>
+      <cursor name="alias" />
+      <cursor name="cell" />
+      <cursor name="copy" />
+      <cursor name="crosshair" />
+      <cursor name="default" />
+      <cursor name="e-resize" />
+      <cursor name="ew-resize" />
+      <cursor name="help" />
+    </row>
+    <row>
+      <cursor name="move" />
+      <cursor name="ne-resize" />
+      <cursor name="nesw-resize" />
+      <cursor name="no-drop" />
+      <cursor name="not-allowed" />
+      <cursor name="n-resize" />
+      <cursor name="ns-resize" />
+      <cursor name="nw-resize" />
+    </row>
+    <row>
+      <cursor name="nwse-resize" />
+      <cursor name="pointer" />
+      <cursor name="progress">
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+      </cursor>
+      <cursor name="se-resize" />
+      <cursor name="s-resize" />
+      <cursor name="sw-resize" />
+      <cursor name="text" />
+      <cursor name="up-arrow" />
+    </row>
+    <row>
+      <cursor name="wait">
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+        <frame delay="125"/>
+      </cursor>
+      <cursor name="w-resize" />
+      <cursor name="vertical-text" />
+      <cursor name="zoom-in" />
+      <cursor name="zoom-out" />
+      <cursor name="all-scroll" />
+    </row>
+  </layout>
+
+  <!-- started to go through aliases -->
+  <alias target="ew-resize"    name="sb_h_double_arrow" />
+  <alias target="ew-resize"    name="split_h"           />
+  <alias target="w-resize"     name="left_side"         />
+  <alias target="e-resize"     name="right_side"        />
+  <alias target="cell"         name="cross_reverse"     />
+  <alias target="cell"         name="diamond_cross"     />
+
+  <!-- missing -->
+  <alias target="default"      name="context-menu"    />
+  <alias target="ew-resize"    name="col-resize"      />
+  <alias target="ns-resize"    name="row-resize"      />
+  <alias target="move"         name="grab"            />
+  <alias target="move"         name="grabbing"            />
+</theme>
