@@ -85,12 +85,32 @@
     <row>
       <cursor name="dnd-link" />
       <cursor name="dnd-move" />
+      <cursor name="dnd-no-drop" />
       <cursor name="dnd-none" />
-      <cursor name="pencil" />
       <cursor name="grabbing" />
       <cursor name="move" />
       <cursor name="context-menu" />
+      <cursor name="pencil" />
+    </row>
+    <row>
+      <cursor name="right-arrow" />
+      <cursor name="left-arrow" />
+      <cursor name="down-arrow" />
+      <cursor name="based_arrow_up" />
+      <cursor name="based_arrow_down" />
+      <cursor name="lr_angle" />
+      <cursor name="ll_angle" />
+      <cursor name="ur_angle" />
+    </row>
+    <row>
+      <cursor name="right_ptr" />
+      <cursor name="top_tee" />
+      <cursor name="right_tee" />
+      <cursor name="left_tee" />
+      <cursor name="bottom_tee" />
       <cursor name="X_cursor" />
+      <cursor name="target" />
+      <cursor name="plus" />
     </row>
   </layout>
 
@@ -107,7 +127,10 @@
     GNOME Adwaita: https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/tree/master/src/cursors
     X11: https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/cursorfont.h
 
-    But mainly taken from https://github.com/ducakar/openzone-cursors/blob/master/src/OpenZone_Black/OpenZone_Black.xml
+    Also taken liberally from https://github.com/ducakar/openzone-cursors/blob/master/src/OpenZone_Black/OpenZone_Black.xml
+
+    But really I suspect that most the old "X11" names will never get
+    used anyway. *SHRUG*
   -->
 
   <alias target="alias"        name="640fb0e74195791501fd1ed57b41487f" />
@@ -115,11 +138,15 @@
   <alias target="all-scroll"   name="fleur" />
   <alias target="cell"         name="cross_reverse" />
   <alias target="cell"         name="diamond_cross" />
-  <alias target="cell"         name="plus" />
+  <alias target="cell"         name="tcross" />
   <alias target="closedhand"   name="fcf21c00b30f7e3f83fe0dfd12e71cff" />
   <alias target="copy"         name="6407b0e94181790501fd1e167b474872" />
   <alias target="copy"         name="b66166c04f8c3109214a4fbd64a50fc8" />
   <alias target="crosshair"    name="cross" />
+  <alias target="crosshair"    name="target" />
+  <alias target="default"      name="left_ptr" />
+  <alias target="dnd-none"     name="ul_angle" />
+  <alias target="down-arrow"   name="sb_down_arrow" />
   <alias target="e-resize"     name="right_side" />
   <alias target="ew-resize"    name="028006030e0e7ebffc7f7070c0600140" />
   <alias target="ew-resize"    name="14fef782d02440884392942c11205230" />
@@ -132,8 +159,11 @@
   <alias target="grab"         name="openhand" />
   <alias target="help"         name="d9ce0ab605698f320427677b458ad60b" />
   <alias target="help"         name="left_ptr_help" />
+  <alias target="help"         name="question_arrow" />
   <alias target="help"         name="whats_this" />
+  <alias target="left-arrow"   name="sb_left_arrow" />
   <alias target="move"         name="4498f0e0c1937ffe01fd06f973665830" />
+  <alias target="move"         name="pointer-move" />
   <alias target="ne-resize"    name="top_right_corner" />
   <alias target="nesw-resize"  name="fcf1c3c7cd4491d801f1e1c78f100000" />
   <alias target="nesw-resize"  name="fd_double_arrow" />
@@ -158,18 +188,26 @@
   <alias target="pointer"      name="9d800788f1b08800ae810202380a0822" />
   <alias target="pointer"      name="e29285e634086352946a0e7090d73106" />
   <alias target="pointer"      name="hand" />
+  <alias target="pointer"      name="hand1" />
   <alias target="pointer"      name="hand2" />
   <alias target="pointer"      name="pointing_hand" />
   <alias target="progress"     name="00000000000000020006000e7e9ffc3f" />
   <alias target="progress"     name="3ecb610c1bf2410f44200f48c40d3599" />
   <alias target="progress"     name="half-busy" />
   <alias target="progress"     name="left_ptr_watch" />
+  <alias target="right-arrow"  name="sb_right_arrow" />
+  <alias target="right_ptr"    name="draft_large" />
+  <alias target="right_ptr"    name="draft_small" />
   <alias target="se-resize"    name="bottom_right_corner" />
   <alias target="s-resize"     name="bottom_side" />
   <alias target="sw-resize"    name="bottom_left_corner" />
+  <alias target="target"       name="dotbox" />
+  <alias target="target"       name="dot_box_mask" />
   <alias target="text"         name="xterm" />
+  <alias target="up-arrow"     name="sb_up_arrow" />
   <alias target="wait"         name="watch" />
   <alias target="w-resize"     name="left_side" />
+  <alias target="X_cursor"     name="pirate" />
   <alias target="X_cursor"     name="wayland-cursor" />
   <alias target="X_cursor"     name="x-cursor" />
 </theme>
