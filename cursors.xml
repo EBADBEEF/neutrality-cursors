@@ -121,6 +121,7 @@
   <!-- Aliases...
 
     Some sources of names below...
+    Freedesktop: https://freedesktop.org/wiki/Specifications/cursor-spec/
     Qt: https://github.com/qt/qtbase/blob/dev/src/plugins/platforms/xcb/qxcbcursor.cpp
     Chromium: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/ui/base/cursor/cursor_factory.cc
     KDE Breeze: https://invent.kde.org/plasma/breeze/-/tree/master/cursors/Breeze?ref_type=heads
