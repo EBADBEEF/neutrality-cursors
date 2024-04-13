@@ -14,6 +14,7 @@
       git
       gnumake
       icon-slicer
+      which
       xorg.xcursorgen
     ];
   in rec {
@@ -27,19 +28,17 @@
         exec make "$@"
       '').outPath;
     };
-    packages.default = pkgs.stdenv.mkDerivation {
+    packages.default = pkgs.stdenv.mkDerivation rec {
       pname = "neutrality";
       version = "git";
       inherit nativeBuildInputs;
-      src = ./.;
-      #builder = apps.default.program;
-      dontUnpack = true;
-      buildPhase = ''
-        echo buildphase
-        pwd
-      '';
-      installPhase = ''
-        echo mooooooo
+      src = self;
+      buildPhase = apps.default.program;
+      installPhase = let
+        installDir="$out/share/icons/${pname}";
+      in ''
+        install -d "${installDir}/cursors"
+        cp -r build/theme/* "${installDir}"
       '';
     };
   });
