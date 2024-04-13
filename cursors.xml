@@ -1,4 +1,16 @@
+<!-- This file is an icon-slicer config. -->
 <theme name="mootral">
+  <!--
+    Each frame is a grid of cursors. Frames after 0 are used for animated
+    cursors. Icon-slicer will automatically crop each cursor to make it as small
+    as possible. In other words, the grid is allowed to be much bigger than the
+    cursor size and any padding around the cursor itself will be cropped away.
+
+    size=24, the xcursor file will report nominal size of 24 pixels
+    gridsize=32, the frame is made up of 32x32 pixel squares
+    margin=0, there are no pixels around the outer edge of squares
+    spacing=1, there is 1 pixel extra in-between each square (but not on the outer edges)
+  -->
   <source size="24" gridsize="32" margin="0" spacing="1">
     <image file="build/frames/Hotspots.png" use="hotspot"/>
     <image file="build/frames/Frame0.png" use="0"/>
@@ -10,6 +22,7 @@
     <image file="build/frames/Frame6.png" use="6"/>
     <image file="build/frames/Frame7.png" use="7"/>
   </source>
+  <!-- Each frame has icons arranged in the grid in the following layout -->
   <layout>
     <row>
       <cursor name="alias" />
@@ -85,6 +98,18 @@
   <alias target="ew-resize"    name="col-resize" />
   <alias target="ns-resize"    name="row-resize" />
 
+  <!-- Aliases...
+
+    Some sources of names below...
+    Qt: https://github.com/qt/qtbase/blob/dev/src/plugins/platforms/xcb/qxcbcursor.cpp
+    Chromium: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/ui/base/cursor/cursor_factory.cc
+    KDE Breeze: https://invent.kde.org/plasma/breeze/-/tree/master/cursors/Breeze?ref_type=heads
+    GNOME Adwaita: https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/tree/master/src/cursors
+    X11: https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/cursorfont.h
+
+    But mainly taken from https://github.com/ducakar/openzone-cursors/blob/master/src/OpenZone_Black/OpenZone_Black.xml
+  -->
+
   <alias target="alias"        name="640fb0e74195791501fd1ed57b41487f" />
   <alias target="alias"        name="a2a266d0498c3104214a47bd64ab0fc8" />
   <alias target="all-scroll"   name="fleur" />
@@ -147,10 +172,4 @@
   <alias target="w-resize"     name="left_side" />
   <alias target="X_cursor"     name="wayland-cursor" />
   <alias target="X_cursor"     name="x-cursor" />
-
-  <!-- Qt: https://github.com/qt/qtbase/blob/dev/src/plugins/platforms/xcb/qxcbcursor.cpp -->
-  <!-- Chromium: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/ui/base/cursor/cursor_factory.cc -->
-  <!-- KDE Breeze: https://invent.kde.org/plasma/breeze/-/tree/master/cursors/Breeze?ref_type=heads -->
-  <!-- GNOME Adwaita: https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/tree/master/src/cursors -->
-  <!-- X11: https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/cursorfont.h -->
 </theme>
