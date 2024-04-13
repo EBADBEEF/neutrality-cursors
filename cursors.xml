@@ -77,18 +77,80 @@
       <cursor name="grabbing" />
       <cursor name="move" />
       <cursor name="context-menu" />
+      <cursor name="X_cursor" />
     </row>
   </layout>
 
-  <!-- started to go through aliases -->
-  <alias target="ew-resize"    name="sb_h_double_arrow" />
-  <alias target="ew-resize"    name="split_h"           />
-  <alias target="w-resize"     name="left_side"         />
-  <alias target="e-resize"     name="right_side"        />
-  <alias target="cell"         name="cross_reverse"     />
-  <alias target="cell"         name="diamond_cross"     />
-
   <!-- missing -->
-  <alias target="ew-resize"    name="col-resize"      />
-  <alias target="ns-resize"    name="row-resize"      />
+  <alias target="ew-resize"    name="col-resize" />
+  <alias target="ns-resize"    name="row-resize" />
+
+  <alias target="alias"        name="640fb0e74195791501fd1ed57b41487f" />
+  <alias target="alias"        name="a2a266d0498c3104214a47bd64ab0fc8" />
+  <alias target="all-scroll"   name="fleur" />
+  <alias target="cell"         name="cross_reverse" />
+  <alias target="cell"         name="diamond_cross" />
+  <alias target="cell"         name="plus" />
+  <alias target="closedhand"   name="fcf21c00b30f7e3f83fe0dfd12e71cff" />
+  <alias target="copy"         name="6407b0e94181790501fd1e167b474872" />
+  <alias target="copy"         name="b66166c04f8c3109214a4fbd64a50fc8" />
+  <alias target="crosshair"    name="cross" />
+  <alias target="e-resize"     name="right_side" />
+  <alias target="ew-resize"    name="028006030e0e7ebffc7f7070c0600140" />
+  <alias target="ew-resize"    name="14fef782d02440884392942c11205230" />
+  <alias target="ew-resize"    name="h_double_arrow" />
+  <alias target="ew-resize"    name="sb_h_double_arrow" />
+  <alias target="ew-resize"    name="size-hor" />
+  <alias target="ew-resize"    name="size_hor" />
+  <alias target="ew-resize"    name="split_h" />
+  <alias target="grabbing"     name="closedhand" />
+  <alias target="grab"         name="openhand" />
+  <alias target="help"         name="d9ce0ab605698f320427677b458ad60b" />
+  <alias target="help"         name="left_ptr_help" />
+  <alias target="help"         name="whats_this" />
+  <alias target="move"         name="4498f0e0c1937ffe01fd06f973665830" />
+  <alias target="ne-resize"    name="top_right_corner" />
+  <alias target="nesw-resize"  name="fcf1c3c7cd4491d801f1e1c78f100000" />
+  <alias target="nesw-resize"  name="fd_double_arrow" />
+  <alias target="nesw-resize"  name="size-bdiag" />
+  <alias target="nesw-resize"  name="size_bdiag" />
+  <alias target="not-allowed"  name="03b6e0fcb3499374a867c041f52298f0" />
+  <alias target="not-allowed"  name="crossed_circle" />
+  <alias target="not-allowed"  name="forbidden" />
+  <alias target="n-resize"     name="top_side" />
+  <alias target="ns-resize"    name="00008160000006810000408080010102" />
+  <alias target="ns-resize"    name="2870a09082c103050810ffdffffe0204" />
+  <alias target="ns-resize"    name="sb_v_double_arrow" />
+  <alias target="ns-resize"    name="size-ver" />
+  <alias target="ns-resize"    name="size_ver" />
+  <alias target="ns-resize"    name="v_double_arrow" />
+  <alias target="nw-resize"    name="top_left_corner" />
+  <alias target="nwse-resize"  name="bd_double_arrow" />
+  <alias target="nwse-resize"  name="c7088f0f3e6c8088236ef8e1e3e70000" />
+  <alias target="nwse-resize"  name="size-fdiag" />
+  <alias target="nwse-resize"  name="size_fdiag" />
+  <alias target="pencil"       name="draft" />
+  <alias target="pointer"      name="9d800788f1b08800ae810202380a0822" />
+  <alias target="pointer"      name="e29285e634086352946a0e7090d73106" />
+  <alias target="pointer"      name="hand" />
+  <alias target="pointer"      name="hand2" />
+  <alias target="pointer"      name="pointing_hand" />
+  <alias target="progress"     name="00000000000000020006000e7e9ffc3f" />
+  <alias target="progress"     name="3ecb610c1bf2410f44200f48c40d3599" />
+  <alias target="progress"     name="half-busy" />
+  <alias target="progress"     name="left_ptr_watch" />
+  <alias target="se-resize"    name="bottom_right_corner" />
+  <alias target="s-resize"     name="bottom_side" />
+  <alias target="sw-resize"    name="bottom_left_corner" />
+  <alias target="text"         name="xterm" />
+  <alias target="wait"         name="watch" />
+  <alias target="w-resize"     name="left_side" />
+  <alias target="X_cursor"     name="wayland-cursor" />
+  <alias target="X_cursor"     name="x-cursor" />
+
+  <!-- Qt: https://github.com/qt/qtbase/blob/dev/src/plugins/platforms/xcb/qxcbcursor.cpp -->
+  <!-- Chromium: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/ui/base/cursor/cursor_factory.cc -->
+  <!-- KDE Breeze: https://invent.kde.org/plasma/breeze/-/tree/master/cursors/Breeze?ref_type=heads -->
+  <!-- GNOME Adwaita: https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/tree/master/src/cursors -->
+  <!-- X11: https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/cursorfont.h -->
 </theme>

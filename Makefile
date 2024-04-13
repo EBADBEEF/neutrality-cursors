@@ -1,4 +1,4 @@
-DESTDIR=$(CURDIR)/build/theme
+theme_dir=$(CURDIR)/build/theme
 gimp_dir=$(CURDIR)/build/gimp
 frames_dir=$(CURDIR)/build/frames
 
@@ -11,9 +11,10 @@ define export-script
 endef
 
 theme: frames
-	mkdir -p "$(DESTDIR)"
-	cp index.theme "$(DESTDIR)"
-	icon-slicer cursors.xml --output-dir "$(DESTDIR)"
+	rm -rf "$(theme_dir)"
+	mkdir -p "$(theme_dir)"
+	cp index.theme "$(theme_dir)"
+	icon-slicer cursors.xml --output-dir "$(theme_dir)"
 
 frames: $(frames_dir)/Hotspots.png
 
