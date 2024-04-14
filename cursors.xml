@@ -144,7 +144,6 @@
   <alias target="copy"         name="6407b0e94181790501fd1e167b474872" />
   <alias target="copy"         name="b66166c04f8c3109214a4fbd64a50fc8" />
   <alias target="crosshair"    name="cross" />
-  <alias target="crosshair"    name="target" />
   <alias target="default"      name="left_ptr" />
   <alias target="dnd-none"     name="ul_angle" />
   <alias target="down-arrow"   name="sb_down_arrow" />

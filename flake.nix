@@ -9,7 +9,7 @@
     };
     nativeBuildInputs = with pkgs; [
       coreutils-full
-      gegl
+      gegl.dev
       gimp
       git
       gnumake
