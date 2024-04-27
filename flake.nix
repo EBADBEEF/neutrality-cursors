@@ -1,12 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/master";
-    flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs = { self, nixpkgs, flake-utils }: flake-utils.lib.eachDefaultSystem (system: let
-    pkgs = import nixpkgs {
-      inherit system;
-    };
+  outputs = { self, nixpkgs }: let
+    inherit (nixpkgs.lib) foldAttrs mergeAttrs mapAttrs;
+    systems = nixpkgs.lib.systems.flakeExposed;
+    # eachSystem [ "s1" "s2" ] (system: { one.two = 12; }) => { one.s1.two = 12; one.s2.two = 12; }
+    eachSystem = f: foldAttrs mergeAttrs { } (map (s: mapAttrs (_: v: { ${s} = v; }) (f s)) systems);
+  in eachSystem (system: let
+    pkgs = nixpkgs.legacyPackages.${system};
     nativeBuildInputs = with pkgs; [
       coreutils-full
       gegl.dev
@@ -17,7 +19,7 @@
       which
       xorg.xcursorgen
     ];
-  in rec {
+  in {
     devShells.default = pkgs.mkShell {
       inherit nativeBuildInputs;
     };
@@ -28,17 +30,16 @@
         exec make "$@"
       '').outPath;
     };
-    packages.default = pkgs.stdenv.mkDerivation rec {
+    packages.default = pkgs.stdenv.mkDerivation {
       pname = "neutrality";
       version = "git";
-      inherit nativeBuildInputs;
       src = self;
-      buildPhase = apps.default.program;
-      installPhase = let
-        installDir="$out/share/icons/${pname}";
-      in ''
-        install -d "${installDir}/cursors"
-        cp -r build/theme/* "${installDir}"
+      inherit nativeBuildInputs;
+      buildPhase = self.apps.${system}.default.program;
+      installPhase = ''
+        installDir="$out/share/icons/$pname";
+        install -d "$installDir/cursors"
+        cp -r build/theme/* "$installDir"
       '';
     };
   });
