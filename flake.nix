@@ -7,40 +7,51 @@
     systems = nixpkgs.lib.systems.flakeExposed;
     # eachSystem [ "s1" "s2" ] (system: { one.two = 12; }) => { one.s1.two = 12; one.s2.two = 12; }
     eachSystem = f: foldAttrs mergeAttrs { } (map (s: mapAttrs (_: v: { ${s} = v; }) (f s)) systems);
-  in eachSystem (system: let
-    pkgs = nixpkgs.legacyPackages.${system};
-    nativeBuildInputs = with pkgs; [
-      coreutils-full
-      gegl.dev
-      gimp
-      git
-      gnumake
-      icon-slicer
-      which
-      xorg.xcursorgen
-    ];
-  in {
-    devShells.default = pkgs.mkShell {
-      inherit nativeBuildInputs;
+
+    package = import ./package.nix;
+
+    perSystemOutputs = eachSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+        realizedPackage = pkgs.callPackage package { neutrality-src = self; };
+      in {
+        # 'nix run' shouldn't do anything
+        apps.default = null;
+
+        # 'nix develop' will give a shell to run build in local directory
+        devShells.default = pkgs.mkShell {
+          inherit (realizedPackage) nativeBuildInputs;
+        };
+
+        # 'nix develop .#build' will build in local directory
+        devShells.build = pkgs.mkShell {
+          inherit (realizedPackage) nativeBuildInputs;
+          shellHook = ''
+            exec make
+          '';
+        };
+
+        # 'nix build' will build the package
+        packages.default = realizedPackage;
+      });
+
+    genericOutputs = {
+      # The overlay can be used as an input in a nixosSystem flake to add
+      # pkgs.neutrality. Found out about the 'composeManyExtensions' pattern
+      # from the poetry2nix flake.
+      overlays.default = nixpkgs.lib.composeManyExtensions [
+        (final: prev: {
+          neutrality = final.callPackage package { neutrality-src = self; };
+        })
+      ];
+
+      # But also export the package function itself in case the user wants to
+      # construct their own overlay with callPackage.
+      inherit package;
+
+      # Another option could be to create a nixosModules.neutrality here to
+      # automatically populate config.environment.systemPackages
     };
-    apps.default = {
-      type = "app";
-      program = (pkgs.writeShellScript "build" ''
-        export PATH="${pkgs.lib.makeBinPath nativeBuildInputs}:$PATH"
-        exec make "$@"
-      '').outPath;
-    };
-    packages.default = pkgs.stdenv.mkDerivation {
-      pname = "neutrality";
-      version = "git";
-      src = self;
-      inherit nativeBuildInputs;
-      buildPhase = self.apps.${system}.default.program;
-      installPhase = ''
-        installDir="$out/share/icons/$pname";
-        install -d "$installDir/cursors"
-        cp -r build/theme/* "$installDir"
-      '';
-    };
-  });
+
+  in perSystemOutputs // genericOutputs;
 }
