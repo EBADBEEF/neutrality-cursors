@@ -1,13 +1,14 @@
-{ stdenv
-, coreutils-full
-, gegl
-, gimp
-, git
-, gnumake
-, icon-slicer
-, which
-, xorg
-, neutrality-src ? ./.
+{
+  stdenv,
+  coreutils-full,
+  gegl,
+  gimp,
+  git,
+  gnumake,
+  icon-slicer,
+  which,
+  xorg,
+  neutrality-src ? ./.,
 }:
 stdenv.mkDerivation {
   pname = "neutrality";
