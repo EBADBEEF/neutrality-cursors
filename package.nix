@@ -2,7 +2,7 @@
   stdenv,
   coreutils-full,
   gegl,
-  gimp,
+  gimp2,
   git,
   gnumake,
   icon-slicer,
@@ -17,7 +17,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     coreutils-full
     gegl.dev
-    gimp
+    gimp2
     git
     gnumake
     icon-slicer
