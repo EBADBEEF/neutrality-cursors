@@ -7,7 +7,7 @@
   gnumake,
   icon-slicer,
   which,
-  xorg,
+  xcursorgen,
   neutrality-src ? ./.,
 }:
 stdenv.mkDerivation {
@@ -22,7 +22,7 @@ stdenv.mkDerivation {
     gnumake
     icon-slicer
     which
-    xorg.xcursorgen
+    xcursorgen
   ];
   installPhase = ''
     set -x

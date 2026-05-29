@@ -19,9 +19,6 @@
           realizedPackage = pkgs.callPackage package { neutrality-src = self; };
         in
         {
-          # 'nix run' shouldn't do anything
-          apps.default = null;
-
           # 'nix develop' will give a shell to run build in local directory
           devShells.default = pkgs.mkShell {
             inherit (realizedPackage) nativeBuildInputs;
